@@ -1,0 +1,12 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "bendevcat",
+  "description": "bendevcat's Claude Code plugins. Each plugin lives in its own repository and is pinned here to a release tag and its commit.",
+  "owner": {
+    "name": "bendevcat"
+  },
+  "metadata": {
+    "version": "0.1.0"
+  },
+  "plugins": []
+}
