@@ -6,7 +6,7 @@
     "name": "bendevcat"
   },
   "metadata": {
-    "version": "0.2.0"
+    "version": "0.3.0"
   },
   "plugins": [
     {
@@ -17,6 +17,16 @@
         "url": "https://github.com/bendevcat/yt-lokus.git",
         "ref": "v0.2.0",
         "sha": "10647e4578c7a04c782b7420a066555e05f5c45a"
+      }
+    },
+    {
+      "name": "anti-drift-auto",
+      "description": "Autonomous multi-plan execution: one product conversation, then plan-by-plan authoring, implementation, adversarial verification and integration — decide-and-log instead of asking, escalations only for irreversible acts, scope and unauthorised publication",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/bendevcat/anti-drift-auto.git",
+        "ref": "v0.4.0",
+        "sha": "dc8f0204540803c31e07272cdbb6d4f5f5e256df"
       }
     }
   ]
