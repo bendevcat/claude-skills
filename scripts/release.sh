@@ -159,7 +159,8 @@ else
   # Commit the manifests if they changed or were never committed (first release).
   FILES=(.claude-plugin/plugin.json)
   [ -f "$LOCAL_MARKET" ] && FILES+=(.claude-plugin/marketplace.json)
-  if [ "$DRY_RUN" -eq 1 ] || [ -n "$(git -C "$REPO" status --porcelain -- "${FILES[@]}")" ]; then
+  if { [ "$DRY_RUN" -eq 1 ] && [ "$VERSION" != "$CURRENT" ]; } \
+     || [ -n "$(git -C "$REPO" status --porcelain -- "${FILES[@]}")" ]; then
     run git -C "$REPO" add -- "${FILES[@]}"
     run git -C "$REPO" commit -q -m "release: $TAG" -- "${FILES[@]}"
   fi
@@ -171,7 +172,7 @@ else
 fi
 
 if [ "$DRY_RUN" -eq 1 ] && ! git -C "$REPO" rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
-  SHA="<sha of the new $TAG>"
+  SHA="(new $TAG)"
 else
   SHA="$(git -C "$REPO" rev-parse "$TAG^{commit}")"
 fi
@@ -228,4 +229,4 @@ if [ "$PUSH" -eq 1 ]; then
   fi
 fi
 
-info "done: $NAME $TAG pinned at ${SHA:0:12}, marketplace $MARKET_OLD → $MARKET_NEW"
+info "done: $NAME $TAG pinned at $(printf "%.12s" "$SHA"), marketplace $MARKET_OLD → $MARKET_NEW"
