@@ -6,7 +6,18 @@
     "name": "bendevcat"
   },
   "metadata": {
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "yt-lokus",
+      "description": "Turns a YouTube video into a Markdown note for Lokus: metadata, summary, critical review and a clickable timestamped transcript.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/bendevcat/yt-lokus.git",
+        "ref": "v0.2.0",
+        "sha": "10647e4578c7a04c782b7420a066555e05f5c45a"
+      }
+    }
+  ]
 }
